@@ -1,0 +1,26 @@
+import unittest
+
+class TestLogin(unittest.TestCase):
+    def setUp(self):
+        # Set up test users and their passwords
+        self.users = {'user1': 'password1', 'user2': 'password2'}
+
+    def test_login(self):
+        # Test that a valid login returns True
+        for username, password in self.users.items():
+            result = login(username, password)
+            self.assertTrue(result)
+
+    def test_invalid_login(self):
+        # Test that an invalid login returns False
+        result = login('invalid_user', 'invalid_password')
+        self.assertFalse(result)
+
+def login(username, password):
+    # Replace with your actual login logic
+    if username in users and users[username] == password:
+        return True
+    return False
+
+if __name__ == '__main__':
+    unittest.main()
